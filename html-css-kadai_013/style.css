@@ -1,0 +1,128 @@
+/* PC、スマホ共通スタイル */
+body {
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
+    sans-serif;
+}
+
+p {
+  font-size: 15px;
+}
+
+#main-visual>img {
+  width: 100%;
+}
+
+/*================
+PC用のスタイル 
+=================*/
+@media screen and (min-width: 768px) {
+  /* 横幅設定 */
+  body {
+    max-width: 1080px;
+    min-width: 960px;
+    margin: 0 auto 0 auto;
+  }
+
+  /* ヘッダー */
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* スマホ用nav */
+  #menu-sp {
+    display: none;
+  }
+  #nav-sp {
+    display: none;
+  }
+  /* PC用ナビゲーションのレイアウト */
+  #nav-pc {
+    text-align: right;
+    font-size: 14px;
+    padding-top: 15px;
+  }
+
+  /* ナビゲーションのリンクの装飾設定 */
+  #nav-pc>a {
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  #nav-pc>a:link {
+    color: #0d0d0d;
+  }
+
+  #nav-pc>a:visited {
+    color: #0d0d0d;
+  }
+
+  #nav-pc>a:hover {
+    color: #0d0d0d;
+    text-decoration: underline;
+  }
+
+  #nav-pc>a:active {
+    color: #0d0d0d;
+  }
+}
+
+/*================
+スマホ用のスタイル
+================*/
+@media screen and (max-width: 767px) {
+  body {
+    min-width: 375px;
+    margin: 0;
+  }
+  #nav-pc { /* PC用ナビゲーション */
+    display: none;
+  }
+  #menu-sp { /* ハンバーガーメニュー */
+    float: right;
+    padding: 0;
+  }
+  #nav-sp {
+    display: none; /* ハンバーガーメニューで表示できるように初期状態は非表示 */
+    background-color: #ce933e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100; /* 要素の中で一番上に表示されるように指定 */
+  }
+  #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  #nav-sp > a {
+    display: block;
+  }
+  #logo-sp { /* nav内のロゴ */
+    margin: 80px 0 30px 20px;
+  }
+  #nav-sp > .menu { /* nav内の各リンク */
+    text-decoration: none; /* 文字装飾の初期状態をなし(none)にするとスッキリして見やすくなる */
+    height: 44px;
+    margin: 0 20px;
+    font-size: 16px;
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+  #nav-sp > a:link {
+    color: #ffffff;
+  }
+  #nav-sp > a:visited {
+    color: #ffffff;
+  }
+  #nav-sp > a:hover { /* スマホの疑似クラス hover は「タップしたとき」に適用する */
+    color: #2710d5;
+    text-decoration: underline;
+  }
+  #nav-sp > a:active {
+    color: lightgreen;
+  }
+}
